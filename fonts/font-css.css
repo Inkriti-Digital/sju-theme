@@ -1,0 +1,34 @@
+
+/* frugitive Black */
+@font-face {
+    font-family: 'FrutigerLTStd75Black';
+    src: url('frutiger-black.eot');
+    src: url('frutiger-black.eot') format('embedded-opentype'),
+         url('frutiger-black.woff2') format('woff2'),
+         url('frutiger-black.woff') format('woff'),
+         url('frutiger-black.ttf') format('truetype'),
+         url('frutiger-black.svg#FrutigerLTStd75Black') format('svg');
+}
+
+/* frugitive Bold */
+@font-face {
+    font-family: 'FrutigerLTStd65Bold';
+    src: url('frutiger-bold.eot');
+    src: url('frutiger-bold.eot') format('embedded-opentype'),
+         url('frutiger-bold.woff2') format('woff2'),
+         url('frutiger-bold.woff') format('woff'),
+         url('frutiger-bold.ttf') format('truetype'),
+         url('frutiger-bold.svg#FrutigerLTStd65Bold') format('svg');
+}
+
+/* frugitive Roman */
+@font-face {
+    font-family: 'FrutigerLTStd55Roman';
+    src: url('frutiger-roman.eot');
+    src: url('frutiger-roman.eot') format('embedded-opentype'),
+         url('frutiger-roman.woff2') format('woff2'),
+         url('frutiger-roman.woff') format('woff'),
+         url('frutiger-roman.ttf') format('truetype'),
+         url('frutiger-roman.svg#FrutigerLTStd55Roman') format('svg');
+}
+

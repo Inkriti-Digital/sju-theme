@@ -1,0 +1,42 @@
+/*Inkriti SJU Style Extensions*/
+
+div {
+	/*border: thin red solid;*/
+}
+
+.grid-content{
+	padding: 15px 20px 0 20px;
+	width: 100%;
+	margin: 0;
+}
+
+.cover {
+	bottom: 0;
+	display: none;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 500;
+}
+
+.close {
+	background: url(../img/global/icons.png) 0 -22px no-repeat;
+	cursor: pointer;
+	height: 22px;
+	position: absolute;
+	right: 20px;
+	top: 48px;
+	width: 22px;
+	z-index: 20;
+}
+
+.close-vid{
+	position: absolute;
+	float: right;
+	margin-top: 30px;
+	margin-right: 20px;
+	display: none;
+}

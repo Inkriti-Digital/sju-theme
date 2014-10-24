@@ -1,0 +1,12 @@
+
+             <div class="col-md-3"><div class="row block"><div class="hover-block"></div><img src="<?php echo get_template_directory_uri(); ?>/img/keep-calm-graduate.png" alt=""></div></div>
+             <div class="col-md-3"><div class="row block"><div class="hover-block"></div><img src="<?php echo get_template_directory_uri(); ?>/img/grid-img2.jpg" alt=""></div></div>
+             <div class="col-md-3"><div class="row block"><div class="part-time"><h2>13%</h2><p>of the class of 2013 found employment through internships, co-ops or part&ndash;time jobs. </p></div></div></div>
+             <div class="col-md-3"><div class="row block"><div class="hover-block"></div><img src="<?php echo get_template_directory_uri(); ?>/img/city-img.jpg" alt=""><p class="philadelphiaTxt">Philadelphia is home to eight Fortune 500 companies, making it ideal for internships.</p></div></div>
+           </div>
+           <div class="row equalizer">
+             <div class="col-md-3"><div class="row block"><div class="graduates"><h2>95%</h2><p>of 2013 graduates had at least one semester&ndash;long internship, co&ndash;op education, service&ndash;learning or study&ndash;abroad experience. </p></div></div></div>
+             <div class="col-md-3"><div class="row block column"><div class="hover-block"></div><img src="<?php echo get_template_directory_uri(); ?>/img/gentleman.png" alt=""></div></div>
+             <div class="col-md-6"><div class="row block"><div class="internships column"><p>Co&ndash;ops: AmerisourceBergen Corporation, Cigna, Comcast Human Concentra, DuPont, Elko CPA, Estée Lauder, F.X. Duffy CPA, Independence Blue Cross, Johnson &amp; Johnson Global Financial Services, Kencrest Services
+</p><p><span>Internships:</span> American Cancer Society, BlackRock, Children's Hospital of Philadelphia, Condé Nast, Teen Vogue, Federal Trade Commission, IBM, Morgan Stanley, New England Pathology Associates, Pennsylvania Department of Agriculture, Philadelphia Phillies, Philadelphia Zoo</p></div></div></div>
+           </div>
