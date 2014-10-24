@@ -64,7 +64,14 @@ get_header(); ?>
 
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="row">
-                      <div class="grid-block" data-rel="<?php the_permalink();?>" data-id="<?php echo $post->ID; ?>">
+                    
+                    <?php 
+//                     $link = trim(the_permalink());
+// $segments = explode('/', $link );
+
+?>
+
+                      <div class="grid-block" data-post="<?php  echo $post->post_name;?>" data-rel="<?php the_permalink();?>" data-id="<?php echo $post->ID; ?>">
                          <div class="grid-img">
                             <?php $image = get_field('image'); if( !empty($image) ): ?>
                               <img src="<?php echo $image['url']; ?>" />
@@ -142,7 +149,7 @@ get_header(); ?>
               while ( $loop->have_posts() ) : $loop->the_post();
             ?> 
 
-            <li><a data-rel="<?php the_permalink();?>"  href="#"><?php the_title(); ?></a></li>
+            <li><a data-post="<?php sanitize_title_with_dashes(the_title());?>" data-rel="<?php the_permalink();?>"  href="#"><?php the_title(); ?></a></li>
 
             <?php endwhile; ?>
 

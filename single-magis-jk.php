@@ -8,7 +8,7 @@
                           <div class="video-nav">
                             <nav id="scroll-nav">
                                 <ul class="nav nav-tabs nav-justified" role="tablist">
-                                    <li><a href="#" class="navigate-home home">Home <span class="home-icon">&nbsp;</span></a></li>
+                                    <li><a href="/" class="home">Home <span class="home-icon">&nbsp;</span></a></li>
                                     <li><a href="#video-blocks"><?php echo  get_field('caption'); ?> <span class="experience-icon">&nbsp;</span></a></li>
                                     <li><a href="<?php echo $visit_link; ?>">Visit <span class="visit-icon">&nbsp;</span></a></li>
                                     <li><a href="<?php echo $apply_link; ?>">Apply <span class="apply-icon">&nbsp;</span></a></li>
@@ -33,15 +33,11 @@
 
                         </div><!-- main video container -->
                         <script>
-
-                        //Moved to Main.js File
-
-                        
-                        //   $( ".play-btn" ).click(function() {
-                        //     console.log("hit play click");
-                        //     $(".cover").show();
-                        //   });
-                        // </script>
+                          $( ".play-btn" ).click(function() {
+                            console.log("hit play click");
+                            $(".cover").show();
+                          });
+                        </script>
                        
                         <a id="close-video" class="hide">&nbsp;</a>
                     </div>
@@ -191,7 +187,6 @@
 
 
     <div class="cover">
-
       <iframe src="" id="vidFrame" name="vidFrame" frameborder="0" style="height: 100%; width: 100%;"></iframe>
       <div class="close-vid" id="close-video">
     </div>

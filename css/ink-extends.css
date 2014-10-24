@@ -6,8 +6,8 @@ div {
 
 .grid-content{
 	padding: 15px 20px 0 20px;
-	width: 100%;
-	margin: 0;
+	width: 94%;
+	margin: 15px;
 }
 
 .cover {
@@ -19,7 +19,8 @@ div {
 	right: 0;
 	top: 0;
 	width: 100%;
-	z-index: 500;
+	z-index: 5000;
+	overflow: hidden;
 }
 
 .close {
@@ -39,4 +40,15 @@ div {
 	margin-top: 30px;
 	margin-right: 20px;
 	display: none;
+}
+
+.play-btn{
+	line-height: 60px;
+}
+
+.lock-nav{
+	bottom: auto !important;
+	position:fixed !important;
+	top:0 !important;
+	width: 101.5% !important;
 }

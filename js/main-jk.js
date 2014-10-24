@@ -2,78 +2,28 @@
 =================/ main.js /=====================
 ======================================= */
 
-
 $(document).ready(function($){
-
-
-hashchanged();
-
-$(window).on('hashchange', function() {
- hashchanged();
-});
-
- 
-
-
-function hashchanged(){
-  var hash =  window.location.hash;
-  var arr = hash.split('#');
-  if (arr[1]) {
-  var post_link =  'http://qa-inkriti-sju.inkriti.net/magis/' + arr[1] + '/';
-    renderPage(post_link);
-    return false;
-  }else{
-      $('#video').hide();
-      $('#video').html('');
-          $('#home').fadeIn('slow');
- 
-  }
-
- //your code
-}
-
 
   /* ------ main navigation ------------ */
   $.slidebars();
-  //site content load
-  $('#video').hide();
-
-
-
-  // http://qa-inkriti-sju.inkriti.net/#magis-goes-above-and-beyond
 
 
 
 
-$(document).on('click', '.navigate-home', function(e){ 
-      $('#video').hide();
-      $('#video').html('');
-          $('#home').fadeIn('slow');
-          window.location.hash = "";  
-          return false;
-});
 
-$(document).on('click', '.grid-block, #navigation a', function(e){ 
-      var post = $(this).data('post');
-            var post_link = $(this).data('rel');
-
-      window.location.hash = '#' + post ;
-
-      renderPage(post_link);
-return false;
-
-});
-
-function renderPage(post_link) {
-      $('#home').hide();
+    //site content load
+    $('#video').hide();
+    $(document).on('click', '.grid-block', function(e){ 
+      e.preventDefault();
+      var post_link = $(this).data('rel');
       $("#video").load(post_link);
       setTimeout(function(){
-        
+        $('#home').hide();
         
         setTimeout(function(){
           $('#video').fadeIn('slow');
           var viewportHeight = $(window).height();
-// $('#gallery').carousel();
+
           $('#videoWrap , .hero-img').css("height", viewportHeight);
           $('#gallery').carousel('pause').hide();
 // $('iframe').css('width', '0');
@@ -138,11 +88,11 @@ function renderPage(post_link) {
 
  })( window, document );
 
-}, 300);
+  }, 300);
   }, 300);
 
 
-    setTimeout(function(){
+        setTimeout(function(){
 
          //Equal heights
     //matching heights
@@ -158,11 +108,13 @@ function renderPage(post_link) {
       })
       $('.equalizer').find('.column').height(highestBox);
     });
-  }, 2000);
+      }, 2000);
 
-   
+ 
 
-     $(document).on('click', '.home', function(e){  
+  });
+
+    $(document).on('click', '.home', function(e){  
       e.preventDefault();
       $('#video').hide();
       $('#home').fadeIn('slow');
@@ -182,9 +134,7 @@ function renderPage(post_link) {
 
     // responsive video
     $('.fluid-vids').hide();
-
     $(document).on('click', '.play-btn', function(){ 
-      
       $('#vidFrame').show();
       $('.hero-container').show();
       $('.cover').show();
@@ -199,14 +149,25 @@ function renderPage(post_link) {
       $('#vidFrame').hide();
       console.log("close clicked");
     }); 
+   //  $(document).on('click', '.play-btn', function(){ 
+   //   $('.hero-container').fadeOut('slow');
+   //   // $('.fluid-vids #video-frame').attr('src', $('.fluid-vids #video-frame').data('src'));
+   //  $("#video-frame")[0].src += "&autoplay=1";
+   //   $('.fluid-vids').fadeIn('fast');
+   //   $(".fluid-vids").animate({padding: "46.5% 0 0 0" });
 
+   //   setTimeout(function(){
+   //    $('#close-video').removeClass('hide');
+   //   }, 1000);
+     
+   // });
 
     // append close button plus close video.
     
     $(document).on('click', '#close-video', function(){ 
       oldSrc = $('#video-frame').data('src');
-      $('#video-frame').attr('src', '');
-      $('#video-frame').attr('src', oldSrc);
+        $('#video-frame').attr('src', '');
+        $('#video-frame').attr('src', oldSrc);
       $('#close-video').addClass('hide');
       $('.fluid-vids').fadeOut('fast'); $('.hero-container').fadeIn('slow'); return false;
       
@@ -235,13 +196,8 @@ function renderPage(post_link) {
     // video description | show full content on hover
     $(document).on('mouseover', '.video-descp', function() { 
       $(this).animate({bottom:0}, 'slow');
-      console.log("descript hover");
-      $('.play-btn').animate({marginTop: "-100px"}, 'slow');
       return false;
-      
-    });
-
-     
+    })
 
     
 
@@ -251,11 +207,6 @@ function renderPage(post_link) {
      $("#gallery").carousel(4);
    });
 
- 
-
-  }
-
-  
 
 
   });
@@ -312,21 +263,6 @@ function renderPage(post_link) {
     });
 
 
-
-//Code for Fixed Nav 
-var scrollNavP = $('body');
-
-$(window).scroll(function() {
-
- // var navLock = ;
-  if(scrollNavP.scrollTop() > 700){
-    jQuery('#scroll-nav').addClass('lock-nav');
-    // console.log("over 700");
-  } else{
-    jQuery('#scroll-nav').removeClass('lock-nav');
-  }
-  // console.log(scrollNavP.scrollTop() );
-});
 
 
 /* this code for image slider --------------------
