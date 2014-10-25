@@ -2,7 +2,12 @@
 $speed = $effect = 0;
 get_header(); ?>
 
-
+<style>
+/*to hide the ticker shown initally */
+#fade li:not(:first-child) { 
+    display: none;
+}
+</style>
 
 <section id="home">
     <div  id="sb-site">
@@ -37,7 +42,7 @@ get_header(); ?>
                         $message = get_sub_field('message');
                       ?>
                                    
-                      <li><?php echo $message; ?></li>
+                      <li> <?php echo $message; ?></li>
                                    
                       <?php endwhile; ?>
 
@@ -139,7 +144,7 @@ get_header(); ?>
       <!-- Slidebar content. -->
       <nav id="navigation">
         <ul>
-            <li><a  href="#">Home</a></li>
+            <li><a  href="/">Home</a></li>
 
             <?php 
               $args = array( 'post_type' => 'magis', 'posts_per_page' => '12' );
@@ -149,7 +154,7 @@ get_header(); ?>
               while ( $loop->have_posts() ) : $loop->the_post();
             ?> 
 
-            <li><a data-post="<?php sanitize_title_with_dashes(the_title());?>" data-rel="<?php the_permalink();?>"  href="#"><?php the_title(); ?></a></li>
+            <li><a data-post="<?php  echo $post->post_name;?>" data-rel="<?php the_permalink();?>"  href="#<?php  echo $post->post_name;?>"><?php the_title(); ?></a></li>
 
             <?php endwhile; ?>
 
