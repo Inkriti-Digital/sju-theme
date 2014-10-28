@@ -16,7 +16,8 @@
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ink-extends.css">
 </head>
 
-<body>
+<!-- To initiall hide the homepage when detail page is loaded directly -->
+<body class="hide">
 
 	<script type="text/javascript">
 		var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';

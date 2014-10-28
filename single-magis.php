@@ -24,25 +24,14 @@
                               </div><!-- video descp -->
                          </div><!-- nav in bottom -->
 
-
                          <a href="/" class="logo video-page"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
                           <div class="hero-img">
                               <img src="<?php echo  get_field('big_image'); ?>" alt="">
-                              <a href="<?php echo  get_field('link'); ?>" class="play-btn" style="-webkit-transform: translateZ(0px); transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); -webkit-transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); top: 65%;" target="vidFrame">Play Video</a>
+                              <a href="<?php echo  get_field('link') . "?rel=0&autoplay=1"; ?>" class="play-btn" style="-webkit-transform: translateZ(0px); transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); -webkit-transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); top: 65%;" target="vidFrame">Play Video</a>
                           </div>
 
                         </div><!-- main video container -->
-                        <script>
-
-                        //Moved to Main.js File
-
-                        
-                        //   $( ".play-btn" ).click(function() {
-                        //     console.log("hit play click");
-                        //     $(".cover").show();
-                        //   });
-                        // </script>
-                       
+                      
                         <a id="close-video" class="hide">&nbsp;</a>
                     </div>
                 </div>
@@ -56,6 +45,7 @@
 
 
   <?php if( have_rows('facts')  ): ?>
+  <?php  $imgslide = 0; ?>
                <?php while( have_rows('facts')  ): the_row(); 
 
                   $content = get_sub_field('content');
@@ -116,7 +106,7 @@
                 <?php  if ($content_style == 'image'): ?>
               <div class="<?php echo $block; ?>">
                 <div class="row">
-                   <div id="img1" class="img-block block">
+                   <div data-imgslide="<?php echo $imgslide;  $imgslide= $imgslide+1; ?>" class="img-block block trigger-carousel">
                         <div class="hover-block"></div><!-- hover overlay block -->
                         <img src="<?php echo $small_image; ?>" alt="">
                    </div><!-- image block -->
@@ -131,7 +121,7 @@
              <div class="<?php echo $block; ?>">
                 <div class="row">
                    <div class="txtWithImg block">
-                        <div class="hover-block"></div><img data-slide-to="3" src="<?php echo $small_image; ?>" alt="">
+                        <div class="hover-block"></div><img src="<?php echo $small_image; ?>" alt="">
                       <?php echo $content; ?>
                     </div>
                    </div><!-- image plus text block -->
@@ -148,24 +138,25 @@
 
          </div>
 
-         <div id="gallery" class="carousel slide" data-ride="carousel">
-              <a id="close-slider"><img src="<?php echo get_template_directory_uri(); ?>/img/carousel-close.png" width="40" height="40" alt=""></a>
+         <div id="gallery" class="carousel slide" data-ride="carousel" style="display:none;">
+            <a id="close-slider"><img src="<?php echo get_template_directory_uri(); ?>/img/carousel-close.png" width="40" height="40" alt=""></a>
               <!-- Wrapper for slides -->
-              <div class="carousel-inner">
-                          <?php if( have_rows('facts')  ): $i=1;?>
+            <div class="carousel-inner">
+            <?php if( have_rows('facts')):  ?>
+            <?php $i =0; ?>
                <?php while( have_rows('facts')  ): the_row(); 
-
-                  
-                  $big_image = get_sub_field('big_image'); ?>
+                  $big_image = get_sub_field('big_image');  
+                  $content = get_sub_field('content'); ?>
                   <?php if($big_image): ?>
-                <div class="item <?php if($i == 1) {echo 'active'; } ?>">
+                   <?php if($content == ""): ?>
+                <div class="item <?php if($i == 0) {echo 'active'; $i=$i+1;} ?>">
                   <img src="<?php echo $big_image; ?>" alt="carousel">
                 </div>
+                <?php endif; ?>    
             <?php endif; ?>    
-                      <?php $i = $i + 1; endwhile; ?>
+                      <?php  endwhile; ?>
             <?php endif; ?>
-
-              </div><!-- carousel slides -->
+            </div><!-- carousel slides -->
 
               <!-- Controls -->
               <a class="left carousel-control" href="#gallery" role="button" data-slide="prev">
@@ -175,10 +166,7 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.png" width="46" height="90" alt="">
               </a>
             </div><!-- image carousel -->
-
       </section><!-- /main-site -->
-
-
       <!-- footer contents -->
       <footer class="row fix"> <a id="scrollTop"><img src="<?php echo get_template_directory_uri(); ?>/img/back-to-top-btn.png" width="54" height="54" alt="Back to top"></a>
         <div class="col-md-12">
@@ -192,7 +180,7 @@
 
     <div class="cover">
 
-      <iframe src="" id="vidFrame" name="vidFrame" frameborder="0" style="height: 100%; width: 100%;"></iframe>
+      <iframe src="" id="vidFrame" name="vidFrame" frameborder="0" style="height: 100%; width: 100%;" autoplay="1"></iframe>
       <div class="close-vid" id="close-video">
     </div>
 
