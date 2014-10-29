@@ -170,7 +170,7 @@
       <!-- footer contents -->
       <footer class="row fix"> <a id="scrollTop"><img src="<?php echo get_template_directory_uri(); ?>/img/back-to-top-btn.png" width="54" height="54" alt="Back to top"></a>
         <div class="col-md-12">
-            <div class="center-block"><p>Copyright  &copy; 2014  St. Joseph's University, 5600 City Ave. Philadelphia, PA 19131 610&ndash;660&ndash;1000</p></div>
+            <div class="center-block"><p>Copyright  &copy; 2014  Saint Joseph's University, 5600 City Ave. Philadelphia, PA 19131 610&ndash;660&ndash;1000</p></div>
         </div>
       </footer>
 
