@@ -108,7 +108,9 @@ $(document).ready(function($){
 
 
     $(document).on('click', '#close-slider', function(){ 
-      $('#gallery').carousel('pause').hide();$('#video-blocks').fadeIn('slow');})
+      $('#gallery').carousel('pause').hide();$('#video-blocks').fadeIn('slow');
+       $('#scroll-nav').show();
+    })
 
 
     $(document).on('click', '.play-btn', function(){ 
@@ -175,6 +177,7 @@ $(document).ready(function($){
       console.log(slide);
      $("#gallery").carousel(slide);
      $('#gallery').fadeIn('slow');$('#video-blocks').fadeOut('fast');
+     $('#scroll-nav').hide();
      return false;
 
    });

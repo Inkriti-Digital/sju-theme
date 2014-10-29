@@ -27,7 +27,7 @@
                          <a href="/" class="logo video-page"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
                           <div class="hero-img">
                               <img src="<?php echo  get_field('big_image'); ?>" alt="">
-                              <a href="<?php echo  get_field('link') . "?rel=0&autoplay=1"; ?>" class="play-btn" style="-webkit-transform: translateZ(0px); transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); -webkit-transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); top: 65%;" target="vidFrame">Play Video</a>
+                              <a href="<?php echo  get_field('link') . "?rel=0&autoplay=1"; ?>" class="play-btn" style="-webkit-transform: translateZ(0px); transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); -webkit-transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); top: 50%;" target="vidFrame">Play Video</a>
                           </div>
 
                         </div><!-- main video container -->

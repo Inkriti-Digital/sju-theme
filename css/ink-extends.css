@@ -52,3 +52,44 @@ div {
 	top:0 !important;
 	width: 101.5% !important;
 }
+
+
+#close-video{
+	right: -15px;
+}
+
+.video-descp p, .video-descp h2, .text-slider{
+	text-align: left;
+}
+
+.video-descp p{
+	line-height: 28px;
+}
+
+.text-slider{
+	margin-left: -40px;
+}
+
+.magis-btn{
+	width: 330px;
+	margin-top: -30px;
+}
+
+.magis-btn:hover{
+	background-color: #fff;
+}
+
+.magis-cta{
+	height: 350px;
+}
+
+.magis-row{
+	background-image: url('../img/live-magis-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center -70px;
+}
+
+.map{
+	margin-top: 0px;
+}
+

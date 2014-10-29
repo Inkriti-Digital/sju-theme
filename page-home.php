@@ -102,6 +102,11 @@ get_header(); ?>
 
           </div><!-- /grid -->
 
+          <div class="row magis-row">
+            <div class="col-md-12 magis-cta">
+              <a href="http://www.sju.edu/information/apply-undergraduate-admission/begin-living-magis" class="play-btn magis-btn"  target="_blank">Begin Living the Magis</a>
+            </div>
+          </div>
 
           <!-- say hello section -->
          <!--  <div class="row">
