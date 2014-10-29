@@ -15,7 +15,7 @@ get_header(); ?>
         <header>
             <div class="row">
                 <div class="col-md-12">
-                    <a href="index.html" class="logo pull-left"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
+                    <a href="/" class="logo pull-left"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
                     <div class="pull-right sb-toggle-right"><span>menu</span> <img src="<?php echo get_template_directory_uri(); ?>/img/nav-icon.gif" width="26" height="19" alt="nav-icon"></div>
                 </div>
             </div>
@@ -137,7 +137,7 @@ get_header(); ?>
       <!-- footer contents -->
       <footer class="row">
         <div class="col-md-12">
-            <div class="center-block"><p>Copyright  &copy; 2014  St. Joseph's University, 5600 City Ave. Philadelphia, PA 19131 610&ndash;660&ndash;1000</p></div>
+            <div class="center-block"><p>Copyright  &copy; 2014  Saint Joseph's University, 5600 City Ave. Philadelphia, PA 19131 610&ndash;660&ndash;1000</p></div>
         </div>
       </footer>
 
