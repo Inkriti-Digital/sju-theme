@@ -1,3 +1,5 @@
+var scrolled = false;
+
 $(document).ready(function($){
 
   hashchanged();
@@ -151,16 +153,27 @@ $(document).ready(function($){
     });
 
     //real world experiences
-    $(document).on('click', 'a[href^="#"]', function() { 
-      var target = $( $(this).attr('href'));
+    // $(document).on('click', 'a[href^="#"]', function() { 
+    //   var target = $( $(this).attr('href'));
 
-      if( target.length ) {
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
+    //   if( target.length ) {
+    //     event.preventDefault();
+    //     $('html, body').animate({
+    //       scrollTop: target.offset().top
+    //     }, 1000);
+    //   }
+    // });
+
+    $(document).off('click', '#scroll-content').on('click', '#scroll-content', function(e) { 
+      if(scrolled == false) {
+      $('html, body').animate({
+          scrollTop: $("#video-blocks").offset().top
+      }, 1000);
+      scrolled = true;
       }
+      e.preventDefault();
     });
+
 
     // video description | show full content on hover
     $(document).on('mouseover', '.video-descp', function() { 
@@ -198,6 +211,7 @@ $('#slide').list_ticker({
 //Code for Fixed Nav 
 var scrollNavP = $('body');
 
+
 $(window).scroll(function() {
 
  // var navLock = ;
@@ -206,6 +220,7 @@ $(window).scroll(function() {
     // console.log("over 700");
   } else{
     jQuery('#scroll-nav').removeClass('lock-nav');
+    scrolled = false;
   }
   // console.log(scrollNavP.scrollTop() );
 });
