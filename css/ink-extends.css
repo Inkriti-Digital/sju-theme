@@ -99,7 +99,7 @@ div {
 }
 
 .col-md-3{
-	height: auto !important;
+	/*height: auto !important;*/
 }
 
 section, body, .container-fluid, #scroll-nav{
