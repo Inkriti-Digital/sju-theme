@@ -58,12 +58,16 @@ div {
 	right: -15px;
 }
 
-.video-descp p, .video-descp h2, .text-slider{
+.text-slider{
 	text-align: left;
 }
 
 .video-descp p{
 	line-height: 28px;
+}
+
+.video-descp{
+	height: 240px;
 }
 
 .text-slider{
@@ -73,6 +77,7 @@ div {
 .magis-btn{
 	width: 330px;
 	margin-top: -30px;
+	left: 44%;
 }
 
 .magis-btn:hover{
@@ -91,5 +96,49 @@ div {
 
 .map{
 	margin-top: 0px;
+}
+
+.col-md-3{
+	height: auto !important;
+}
+
+section, body, .container-fluid, #scroll-nav{
+	/*min-width: 768px !important;*/
+}
+
+
+
+
+/***********MEDIA QUERIES**********/
+@media (max-width: 1440px) {
+	.txt-block p{
+		font-size: 22px ;
+	}
+
+	.txt-block h2{
+		font-size: 58px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.txt-block p{
+		font-size: 18px ;
+	}
+	.txt-block h2{
+		font-size: 46px;
+	}
+
+@media (max-width: 992px) {
+	.txt-block p{
+		font-size: 18px ;
+		/*color: #fff;*/
+	}
+	.txt-block h2{
+		font-size: 46px;
+	}
+
+	@media (max-width: 768px) {
+		/*prevent media query stacking nav*/
+	}
 }
 
