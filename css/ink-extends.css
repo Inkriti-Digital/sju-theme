@@ -189,12 +189,24 @@ section, body, .container-fluid, .row{
 			height: 671px;
 		}
 
-		.col-md-3 column{
-			/*height: auto !important;*/
+		.col-md-3, .col-md-6{
+			height: auto !important;
 		}
 
 		#videoWrap .hero-img{
 			height: auto !important;
+		}
+
+		.video-descp p{
+			padding-left: 20px;
+		}
+
+		.play-btn {
+			margin-top: -100px;
+		}
+
+		#videoWrap {
+			height: 660px !important;
 		}
 	}
 }
@@ -209,14 +221,35 @@ section, body, .container-fluid, .row{
 	.play-btn {
 		line-height: 60px;
 		top: 360px !important;
+		margin-top: -100px;
 	}
 
 	.hero-container{
 			height: 617px;
 		}
 
-		#videoWrap .hero-img{
+		.hero-img{
 			height: auto !important;
 		}
+
+		#videoWrap{
+			height: 590px !important;
+		}
+
+		.video-descp {
+			top: -260px !important;
+		}
+
+		.hero-container{
+			width: 102%;
+		}
+
+		.video-descp {
+			top: -253px !important;
+			width: 102% !important;
+			padding: 10px;
+		}
+
+
 }
 
