@@ -4,7 +4,7 @@
 
 <head>
   <title><?php wp_title( '|', true, 'right' ); ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.25, maximum-scale=1.0, user-scalable=yes">
   <meta name="description" content="What's magis? It's a Jesuit principle that underlies everything we do at Saint Joseph's University. Discover what Magis means at SJU.">
   <meta name="keywords" content="" />
 
