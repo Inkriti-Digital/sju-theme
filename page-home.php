@@ -165,39 +165,18 @@ get_header(); ?>
 
         </ul>
 
-
-        <?php 
-            $args = array( 'post_type' => 'apply', 'posts_per_page' => '1' );
-            $loop = new WP_Query( $args );
-        ?>
-        <?php 
-          while ( $loop->have_posts() ) : $loop->the_post(); 
-          $apply_link = get_field('link');
-          endwhile; 
-        ?>
-
-        <?php 
-            $args = array( 'post_type' => 'visit', 'posts_per_page' => '1' );
-            $loop = new WP_Query( $args );
-        ?>
-        <?php 
-          while ( $loop->have_posts() ) : $loop->the_post(); 
-          $visit_link = get_field('link');
-          endwhile; 
-        ?>
-
-        
+  
         <ul class="ext-links">
-            <li><a href="<?php echo $visit_link; ?>">Visit</a></li>
-            <li><a href="<?php echo $apply_link; ?>">Apply</a></li>
-            <li><a href="http://sju.edu/">SJU.EDU</a></li>
+            <li><a target="_blank" href="http://sju.edu/visit">Visit</a></li>
+            <li><a target="_blank" href="http://sju.edu/apply">Apply</a></li>
+            <li><a target="_blank" href="http://sju.edu/">SJU.EDU</a></li>
         </ul>
       </nav>
       <div class="share">
         <h4>Share</h4>
-        <a href="#" class="twit">twitter</a>
-        <a href="#" class="fb"  onClick="window.open('http://www.facebook.com/sharer.php?u=http://qa-inkriti-sju.inkriti.net','sharer','toolbar=0,status=0,width=580,height=325');" href="javascript: void(0)">facebook</a>
-             </div>
+        <a target="_blank"  href="http://twitter.com/share?text=Look for" target="_blank" class="twit twitterpopup">twitter</a>
+        <a  target="_blank" href="#" onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://qa-inkriti-sju.inkriti.net/', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" class="fb">facebook</a>
+      </div>
 </div>
 </section><!-- /wrap -->
 

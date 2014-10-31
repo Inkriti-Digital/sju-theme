@@ -1,5 +1,13 @@
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 inner-page-domino">
+                    <a href="/" class="logo pull-left inner-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
+                    <div class="pull-right sb-toggle-right"><span>menu</span> <img src="<?php echo get_template_directory_uri(); ?>/img/nav-icon.gif" width="26" height="19" alt="nav-icon"></div>
+                </div>
+  </div>
+
       <div class="row">
+
         <header id="videoWrap">
             <div class="row">
                 <div class="col-md-12">
@@ -8,10 +16,10 @@
                           <div class="video-nav">
                             <nav id="scroll-nav">
                                 <ul class="nav nav-tabs nav-justified" role="tablist">
-                                    <li><a href="/" class="home">Home <span class="home-icon">&nbsp;</span></a></li>
+                                    <li><a href="#" class="navigate-home home">Home <span class="home-icon">&nbsp;</span></a></li>
                                     <li><a href="#video-blocks"><?php echo  get_field('caption'); ?> <span class="experience-icon">&nbsp;</span></a></li>
-                                    <li><a href="<?php echo $visit_link; ?>">Visit <span class="visit-icon">&nbsp;</span></a></li>
-                                    <li><a href="<?php echo $apply_link; ?>">Apply <span class="apply-icon">&nbsp;</span></a></li>
+                                    <li><a href="http://sju.edu/visit">Visit <span class="visit-icon">&nbsp;</span></a></li>
+                                    <li><a href="http://sju.edu/apply">Apply <span class="apply-icon">&nbsp;</span></a></li>
                                 </ul>
                             </nav>
 
@@ -24,21 +32,14 @@
                               </div><!-- video descp -->
                          </div><!-- nav in bottom -->
 
-
                          <a href="/" class="logo video-page"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
                           <div class="hero-img">
                               <img src="<?php echo  get_field('big_image'); ?>" alt="">
-                              <a href="<?php echo  get_field('link'); ?>" class="play-btn" style="-webkit-transform: translateZ(0px); transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); -webkit-transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); top: 65%;" target="vidFrame">Play Video</a>
+                              <a href="<?php echo  get_field('link') . "?rel=0&autoplay=1"; ?>" class="play-btn" style="-webkit-transform: translateZ(0px); transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); -webkit-transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); top: 50%;" target="vidFrame">Play Video</a>
                           </div>
 
                         </div><!-- main video container -->
-                        <script>
-                          $( ".play-btn" ).click(function() {
-                            console.log("hit play click");
-                            $(".cover").show();
-                          });
-                        </script>
-                       
+                      
                         <a id="close-video" class="hide">&nbsp;</a>
                     </div>
                 </div>
@@ -52,6 +53,7 @@
 
 
   <?php if( have_rows('facts')  ): ?>
+  <?php  $imgslide = 0; ?>
                <?php while( have_rows('facts')  ): the_row(); 
 
                   $content = get_sub_field('content');
@@ -112,7 +114,7 @@
                 <?php  if ($content_style == 'image'): ?>
               <div class="<?php echo $block; ?>">
                 <div class="row">
-                   <div id="img1" class="img-block block">
+                   <div data-imgslide="<?php echo $imgslide;  $imgslide= $imgslide+1; ?>" class="img-block block trigger-carousel">
                         <div class="hover-block"></div><!-- hover overlay block -->
                         <img src="<?php echo $small_image; ?>" alt="">
                    </div><!-- image block -->
@@ -127,7 +129,7 @@
              <div class="<?php echo $block; ?>">
                 <div class="row">
                    <div class="txtWithImg block">
-                        <div class="hover-block"></div><img data-slide-to="3" src="<?php echo $small_image; ?>" alt="">
+                        <div class="hover-block"></div><img src="<?php echo $small_image; ?>" alt="">
                       <?php echo $content; ?>
                     </div>
                    </div><!-- image plus text block -->
@@ -144,24 +146,25 @@
 
          </div>
 
-         <div id="gallery" class="carousel slide" data-ride="carousel">
-              <a id="close-slider"><img src="<?php echo get_template_directory_uri(); ?>/img/carousel-close.png" width="40" height="40" alt=""></a>
+         <div id="gallery" class="carousel slide" data-ride="carousel" style="display:none;">
+            <a id="close-slider"><img src="<?php echo get_template_directory_uri(); ?>/img/carousel-close.png" width="40" height="40" alt=""></a>
               <!-- Wrapper for slides -->
-              <div class="carousel-inner">
-                          <?php if( have_rows('facts')  ): $i=1;?>
+            <div class="carousel-inner">
+            <?php if( have_rows('facts')):  ?>
+            <?php $i =0; ?>
                <?php while( have_rows('facts')  ): the_row(); 
-
-                  
-                  $big_image = get_sub_field('big_image'); ?>
+                  $big_image = get_sub_field('big_image');  
+                  $content = get_sub_field('content'); ?>
                   <?php if($big_image): ?>
-                <div class="item <?php if($i == 1) {echo 'active'; } ?>">
+                   <?php if($content == ""): ?>
+                <div class="item <?php if($i == 0) {echo 'active'; $i=$i+1;} ?>">
                   <img src="<?php echo $big_image; ?>" alt="carousel">
                 </div>
+                <?php endif; ?>    
             <?php endif; ?>    
-                      <?php $i = $i + 1; endwhile; ?>
+                      <?php  endwhile; ?>
             <?php endif; ?>
-
-              </div><!-- carousel slides -->
+            </div><!-- carousel slides -->
 
               <!-- Controls -->
               <a class="left carousel-control" href="#gallery" role="button" data-slide="prev">
@@ -171,23 +174,77 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.png" width="46" height="90" alt="">
               </a>
             </div><!-- image carousel -->
-
       </section><!-- /main-site -->
-
-
       <!-- footer contents -->
       <footer class="row fix"> <a id="scrollTop"><img src="<?php echo get_template_directory_uri(); ?>/img/back-to-top-btn.png" width="54" height="54" alt="Back to top"></a>
         <div class="col-md-12">
-            <div class="center-block"><p>Copyright  &copy; 2014  St. Joseph's University, 5600 City Ave. Philadelphia, PA 19131 610&ndash;660&ndash;1000</p></div>
+            <div class="center-block"><p>Copyright  &copy; 2014  Saint Joseph's University, 5600 City Ave. Philadelphia, PA 19131 610&ndash;660&ndash;1000</p></div>
         </div>
       </footer>
 
     </div><!-- /fluid-container -->
 
+    <div class="sb-slidebar sb-right sb-momentum-scrolling inner-sidebar">
+    <span class="sb-close">&nbsp;</span>
+      <!-- Slidebar content. -->
+      <nav id="navigation">
+        <ul>
+            <li><a  href="/">Home</a></li>
+
+            <?php 
+              $args = array( 'post_type' => 'magis', 'posts_per_page' => '12' );
+              $loop = new WP_Query( $args );
+            ?>
+            <?php 
+              while ( $loop->have_posts() ) : $loop->the_post();
+            ?> 
+
+            <li><a data-post="<?php  echo $post->post_name;?>" data-rel="<?php the_permalink();?>"  href="#<?php  echo $post->post_name;?>"><?php the_title(); ?></a></li>
+
+            <?php endwhile; ?>
+
+        </ul>
+
+
+        <?php 
+            $args = array( 'post_type' => 'apply', 'posts_per_page' => '1' );
+            $loop = new WP_Query( $args );
+        ?>
+        <?php 
+          while ( $loop->have_posts() ) : $loop->the_post(); 
+          $apply_link = get_field('link');
+          endwhile; 
+        ?>
+
+        <?php 
+            $args = array( 'post_type' => 'visit', 'posts_per_page' => '1' );
+            $loop = new WP_Query( $args );
+        ?>
+        <?php 
+          while ( $loop->have_posts() ) : $loop->the_post(); 
+          $visit_link = get_field('link');
+          endwhile; 
+        ?>
+
+        
+        <ul class="ext-links">
+            <li><a href="<?php echo $visit_link; ?>">Visit</a></li>
+            <li><a href="<?php echo $apply_link; ?>">Apply</a></li>
+            <li><a href="http://sju.edu/">SJU.EDU</a></li>
+        </ul>
+      </nav>
+      <div class="share">
+        <h4>Share</h4>
+        <a href="#" class="twit">twitter</a>
+        <a href="#" class="fb">facebook</a>
+      </div>
+</div>
+
 
 
     <div class="cover">
-      <iframe src="" id="vidFrame" name="vidFrame" frameborder="0" style="height: 100%; width: 100%;"></iframe>
+
+      <iframe src="" id="vidFrame" name="vidFrame" frameborder="0" style="height: 100%; width: 100%;" autoplay="1"></iframe>
       <div class="close-vid" id="close-video">
     </div>
 
