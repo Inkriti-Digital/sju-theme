@@ -18,8 +18,8 @@
                                 <ul class="nav nav-tabs nav-justified" role="tablist">
                                     <li><a href="#" class="navigate-home home">Home <span class="home-icon">&nbsp;</span></a></li>
                                     <li><a href="#video-blocks"><?php echo  get_field('caption'); ?> <span class="experience-icon">&nbsp;</span></a></li>
-                                    <li><a href="<?php echo $visit_link; ?>">Visit <span class="visit-icon">&nbsp;</span></a></li>
-                                    <li><a href="<?php echo $apply_link; ?>">Apply <span class="apply-icon">&nbsp;</span></a></li>
+                                    <li><a href="http://sju.edu/visit">Visit <span class="visit-icon">&nbsp;</span></a></li>
+                                    <li><a href="http://sju.edu/apply">Apply <span class="apply-icon">&nbsp;</span></a></li>
                                 </ul>
                             </nav>
 

@@ -196,8 +196,8 @@ get_header(); ?>
       <div class="share">
         <h4>Share</h4>
         <a href="#" class="twit">twitter</a>
-        <a href="#" class="fb">facebook</a>
-      </div>
+        <a href="#" class="fb"  onClick="window.open('http://www.facebook.com/sharer.php?u=http://qa-inkriti-sju.inkriti.net','sharer','toolbar=0,status=0,width=580,height=325');" href="javascript: void(0)">facebook</a>
+             </div>
 </div>
 </section><!-- /wrap -->
 
