@@ -1,5 +1,13 @@
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 inner-page-domino">
+                    <a href="/" class="logo pull-left inner-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
+                    <div class="pull-right sb-toggle-right"><span>menu</span> <img src="<?php echo get_template_directory_uri(); ?>/img/nav-icon.gif" width="26" height="19" alt="nav-icon"></div>
+                </div>
+  </div>
+
       <div class="row">
+
         <header id="videoWrap">
             <div class="row">
                 <div class="col-md-12">
@@ -175,6 +183,62 @@
       </footer>
 
     </div><!-- /fluid-container -->
+
+    <div class="sb-slidebar sb-right sb-momentum-scrolling inner-sidebar">
+    <span class="sb-close">&nbsp;</span>
+      <!-- Slidebar content. -->
+      <nav id="navigation">
+        <ul>
+            <li><a  href="/">Home</a></li>
+
+            <?php 
+              $args = array( 'post_type' => 'magis', 'posts_per_page' => '12' );
+              $loop = new WP_Query( $args );
+            ?>
+            <?php 
+              while ( $loop->have_posts() ) : $loop->the_post();
+            ?> 
+
+            <li><a data-post="<?php  echo $post->post_name;?>" data-rel="<?php the_permalink();?>"  href="#<?php  echo $post->post_name;?>"><?php the_title(); ?></a></li>
+
+            <?php endwhile; ?>
+
+        </ul>
+
+
+        <?php 
+            $args = array( 'post_type' => 'apply', 'posts_per_page' => '1' );
+            $loop = new WP_Query( $args );
+        ?>
+        <?php 
+          while ( $loop->have_posts() ) : $loop->the_post(); 
+          $apply_link = get_field('link');
+          endwhile; 
+        ?>
+
+        <?php 
+            $args = array( 'post_type' => 'visit', 'posts_per_page' => '1' );
+            $loop = new WP_Query( $args );
+        ?>
+        <?php 
+          while ( $loop->have_posts() ) : $loop->the_post(); 
+          $visit_link = get_field('link');
+          endwhile; 
+        ?>
+
+        
+        <ul class="ext-links">
+            <li><a href="<?php echo $visit_link; ?>">Visit</a></li>
+            <li><a href="<?php echo $apply_link; ?>">Apply</a></li>
+            <li><a href="http://sju.edu/">SJU.EDU</a></li>
+        </ul>
+      </nav>
+      <div class="share">
+        <h4>Share</h4>
+        <a href="#" class="twit">twitter</a>
+        <a href="#" class="fb">facebook</a>
+      </div>
+</div>
 
 
 

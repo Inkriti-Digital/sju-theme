@@ -207,6 +207,15 @@ $('#slide').list_ticker({
 });
 
 
+$(document).on('click', '.sb-toggle-right', function() {
+  
+  jQuery('.inner-sidebar').show();
+});
+
+$(document).on('click', '.sb-close', function() {
+
+  jQuery('.inner-sidebar').hide();
+});
 
 //Code for Fixed Nav 
 var scrollNavP = $('body');
