@@ -145,15 +145,27 @@ section, body, .container-fluid, .row{
 		font-size: 46px;
 	}
 
+	
 
-	@media (max-width: 769px) {
+	
+
+
+	@media (max-width: 768px) {
 		section, body, .container-fluid{
-	/*min-width: 768px !important;*/
-	width: 768px !important;
-}
+			/*min-width: 768px !important;*/
+			width: 768px !important;
+		}
+
+		
 
 		.sb-close{
 			cursor: pointer;
+		}
+
+		.row{
+			margin-left: -20px;
+			/*padding: 0;*/
+			width: 102%;
 		}
 
 		.inner-sidebar{
@@ -216,9 +228,11 @@ section, body, .container-fluid, .row{
 
 @media (max-width: 640px) {
 	section, body, .container-fluid{
-	min-width: 640px !important;
-	width: 640px !important;
-}
+		min-width: 640px !important;
+		width: 640px !important;
+	}
+
+	
 	.play-btn {
 		line-height: 60px;
 		top: 360px !important;
