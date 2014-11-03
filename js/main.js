@@ -14,7 +14,7 @@ $(document).ready(function($){
     var hash =  window.location.hash;
     var arr = hash.split('#');
     if (arr[1]) {
-      var post_link =  'http://qa-inkriti-sju.inkriti.net/magis/' + arr[1] + '/';
+      var post_link =  '<?php echo site_url(); ?>/magis/' + arr[1] + '/';
       renderPage(post_link);
 
     }else{
@@ -49,8 +49,8 @@ $(document).ready(function($){
   return false;
 });
 
- $(document).on('click', '.grid-block, #navigation a', function(e){ 
-  var post = $(this).data('post');
+ $(document).on('click', '.grid-block, #navigation ul.sidenavright > li a', function(e){ 
+   var post = $(this).data('post');
   if(post) {
   var post_link = $(this).data('rel');
   window.location.hash = '#' + post ;
@@ -63,6 +63,7 @@ $(document).ready(function($){
   }
 
 });
+
 
  function renderPage(post_link) {
   $('#home').hide();

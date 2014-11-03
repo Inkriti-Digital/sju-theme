@@ -1,5 +1,5 @@
 var scrolled = false;
-
+$.slidebars();
 $(document).ready(function($){
 
   hashchanged();
@@ -7,6 +7,7 @@ $(document).ready(function($){
  $(window).on('hashchange', function() {
    hashchanged();
  });
+
 
 
   function hashchanged(){
@@ -35,7 +36,7 @@ $(document).ready(function($){
   $('#fade').removeClass('hide');
 
   /* ------ main navigation ------------ */
-  $.slidebars();
+  
  //site content load
  $('#video').hide();
 
@@ -72,7 +73,7 @@ $(document).ready(function($){
       $('#videoWrap , .hero-img').css("height", viewportHeight);
       
 //Code remove as Justin updated new code for video 
-  }, 300);
+  }, 500);
 
 // code to make all boxes in equal heights in detail page
   setTimeout(function(){
@@ -90,6 +91,9 @@ $(document).ready(function($){
       })
       $('.equalizer').find('.column').height(highestBox);
     });
+
+
+  
   }, 2000);
 
   // $('#gallery .carousel-inner:first-child').addClass('active');
@@ -207,7 +211,7 @@ $('#slide').list_ticker({
 });
 
 
-$(document).on('click', '.sb-toggle-right', function() {
+$(document).on('click', '.sidebar-toggle-right', function() {
   
   jQuery('.inner-sidebar').show();
 });
@@ -224,7 +228,9 @@ var scrollNavP = $('body');
 $(window).scroll(function() {
 
  // var navLock = ;
- if(scrollNavP.scrollTop() > 700){
+
+ 
+ if(scrollNavP.scrollTop() > jQuery('.hero-container').height() -jQuery('#scroll-nav').height()){
   jQuery('#scroll-nav').addClass('lock-nav');
     // console.log("over 700");
   } else{
@@ -232,4 +238,53 @@ $(window).scroll(function() {
     scrolled = false;
   }
   // console.log(scrollNavP.scrollTop() );
+});
+
+
+$(window).on('resize', function() {
+    jQuery('.equalizer').each(function(){
+      var highestBox = 0;
+
+      jQuery('.equalizer').find('.column').each(function(){
+
+        if(jQuery(this).height() > highestBox){
+          highestBox = jQuery(this).height();
+          console.log(highestBox);
+        }
+      })
+      jQuery('.equalizer').find('.column').height(highestBox);
+    });
+});
+
+
+ jQuery('.twitterpopup').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = (jQuery(window).width()  - width)  / 2,
+        top    = (jQuery(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'twitter', opts);
+ 
+    return false;
+  });
+
+
+
+
+ //JK edits - mobile nav
+
+ $(document).on('click', '.sb-toggle-right', function() {
+  
+  jQuery('.inner-sidebar').show();
+});
+
+$(document).on('click', '.sb-close', function() {
+
+  jQuery('.inner-sidebar').hide();
 });

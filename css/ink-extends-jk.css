@@ -156,15 +156,6 @@ section, body, .container-fluid, .row{
 			width: 768px !important;
 		}
 
-		.container-fluid{
-			padding-right: 0px;
-		}
-
-		.grid-block img{
-			width: 100%;
-			height: auto;
-		}
-
 		
 
 		.sb-close{
@@ -187,7 +178,7 @@ section, body, .container-fluid, .row{
 		}
 
 		#scroll-nav{
-			display: none !important;
+			display: none;
 		}
 
 		.logo.video-page{
@@ -204,12 +195,11 @@ section, body, .container-fluid, .row{
 		}
 
 		.video-descp{
-			top: -230px !important;
+			top: -243px !important;
 		}
 
 		.hero-container{
 			height: 671px;
-			width: 103%;
 		}
 
 		#video-blocks .col-md-3, #video-blocks .col-md-6, .text-block-redBg{
@@ -221,8 +211,7 @@ section, body, .container-fluid, .row{
 		}
 
 		.video-descp p{
-			padding-left: 30px;
-			padding-right: 15px;
+			padding-left: 20px;
 		}
 
 		.play-btn {
@@ -243,7 +232,6 @@ section, body, .container-fluid, .row{
 		width: 640px !important;
 	}
 
-	
 	.play-btn {
 		line-height: 60px;
 		top: 360px !important;
@@ -251,7 +239,7 @@ section, body, .container-fluid, .row{
 	}
 
 	.hero-container{
-			height: 624px;
+			height: 617px;
 		}
 
 		.hero-img{
@@ -279,13 +267,6 @@ section, body, .container-fluid, .row{
 		#video-blocks .col-md-3, #video-blocks .col-md-6, .text-block-redBg{
 			height: auto !important;
 		}
-
-		.row{
-			width: 103%;
-			margin-left: -15px;
-		}
-
-
 
 
 }
