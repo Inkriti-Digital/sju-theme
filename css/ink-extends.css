@@ -156,6 +156,10 @@ section, body, .container-fluid, .row{
 			width: 768px !important;
 		}
 
+		.grid-block{
+			height: 700px;
+		}
+
 		.container-fluid{
 			padding-right: 0px;
 		}
@@ -283,6 +287,10 @@ section, body, .container-fluid, .row{
 		.row{
 			width: 103%;
 			margin-left: -15px;
+		}
+
+		.grid-block{
+			height: 615px;
 		}
 
 
