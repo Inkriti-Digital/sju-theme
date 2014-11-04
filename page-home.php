@@ -167,9 +167,9 @@ get_header(); ?>
 
   
         <ul class="ext-links">
-            <li><a target="_blank" href="http://sju.edu/visit">Visit</a></li>
-            <li><a target="_blank" href="http://sju.edu/apply">Apply</a></li>
-            <li><a target="_blank" href="http://sju.edu/">SJU.EDU</a></li>
+            <li><a target="_blank" href="http://www.sju.edu/visit">Visit</a></li>
+            <li><a target="_blank" href="http://www.sju.edu/apply">Apply</a></li>
+            <li><a target="_blank" href="http://www.sju.edu/">SJU.EDU</a></li>
         </ul>
       </nav>
       <div class="share">
