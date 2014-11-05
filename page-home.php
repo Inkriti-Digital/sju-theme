@@ -9,16 +9,20 @@ get_header(); ?>
 }
 </style>
 
-<section id="home">
+
     <div  id="sb-site">
-    <div class="container-fluid">
-        <header>
-            <div class="row">
+       <div class="container-fluid">
+                <div class="row">
                 <div class="col-md-12">
                     <a href="/" class="logo pull-left"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
                     <div class="pull-right sb-toggle-right"><span>menu</span> <img src="<?php echo get_template_directory_uri(); ?>/img/nav-icon.gif" width="26" height="19" alt="nav-icon"></div>
                 </div>
             </div>
+            </div>
+      <section id="home">
+    <div class="container-fluid">
+        <header>
+  
 
             <div class="row">
               <div class="col-md-12">
@@ -142,8 +146,25 @@ get_header(); ?>
       </footer>
 
     </div><!-- /fluid-container -->
-    </div>
 
+
+</section><!-- /wrap -->
+
+<!-- second layer -->
+  
+<section id="video">
+                
+  <div class="equalizer">
+    <div class="column">
+      
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+ 
     <div class="sb-slidebar sb-right sb-momentum-scrolling">
     <span class="sb-close">&nbsp;</span>
       <!-- Slidebar content. -->
@@ -178,18 +199,9 @@ get_header(); ?>
         <a target="_blank"  href="http://twitter.com/share?text=Begin living the magis.   See how Saint Joseph's University in Philadelphia is helping its students to live greater. " target="_blank" class="twit twitterpopup">twitter</a>
         <a  target="_blank" href="#" onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['SERVER_NAME'] .'/' ?>', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no'); return false;" class="fb">facebook</a>
       </div>
-</div>
-</section><!-- /wrap -->
+         </div>
 
-<!-- second layer -->
-<section id="video">
-                
-  <div class="equalizer">
-    <div class="column">
-      
-    </div>
-  </div>
-</section>
+ 
 
 
       

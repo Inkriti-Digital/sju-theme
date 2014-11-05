@@ -95,8 +95,7 @@ $(document).ready(function($){
       $('.equalizer').find('.column').height(highestBox);
     });
 
-
-  
+ 
   }, 2000);
 
   // $('#gallery .carousel-inner:first-child').addClass('active');

@@ -1,14 +1,6 @@
 
  <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12 inner-page-domino">
-                    <a href="/" class="logo pull-left inner-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
-                    <div class="pull-right sb-toggle-right"><span>menu</span> <img src="<?php echo get_template_directory_uri(); ?>/img/nav-icon.gif" width="26" height="19" alt="nav-icon"></div>
-                </div>
-  </div>
-
       <div class="row">
-
         <header id="videoWrap">
             <div class="row">
                 <div class="col-md-12">
@@ -33,7 +25,7 @@
                               </div><!-- video descp -->
                          </div><!-- nav in bottom -->
 
-                         <a href="/" class="logo video-page"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
+                         
                           <div class="hero-img">
                               <img src="<?php echo  get_field('big_image'); ?>" alt="">
                               <a href="<?php echo  get_field('link') . "?rel=0&autoplay=1"; ?>" class="play-btn" style="-webkit-transform: translateZ(0px); transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); -webkit-transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); top: 50%;" target="vidFrame">Play Video</a>
@@ -184,48 +176,8 @@
       </footer>
 
     </div><!-- /fluid-container -->
-
-    <div class="sb-slidebar sb-right sb-momentum-scrolling inner-sidebar">
-    <span class="sb-close">&nbsp;</span>
-      <!-- Slidebar content. -->
-      <nav id="navigation">
-        <ul>
-            <li><a  href="/">Home</a></li>
-
-            <?php 
-              $args = array( 'post_type' => 'magis', 'posts_per_page' => '12' );
-              $loop = new WP_Query( $args );
-            ?>
-            <?php 
-              while ( $loop->have_posts() ) : $loop->the_post();
-            ?> 
-
-            <li><a data-post="<?php  echo $post->post_name;?>" data-rel="<?php the_permalink();?>"  href="#<?php  echo $post->post_name;?>"><?php the_title(); ?></a></li>
-
-            <?php endwhile; ?>
-
-        </ul>
-
-
-      
-        <ul class="ext-links">
-            <li><a target="_blank" href="http://www.sju.edu/visit">Visit</a></li>
-            <li><a target="_blank" href="http://www.sju.edu/apply">Apply</a></li>
-            <li><a target="_blank" href="http://www.sju.edu/">SJU.EDU</a></li>
-        </ul>
-      </nav>
-      <div class="share">
-        <h4>Share</h4>
-  <h4>Share</h4>
-        <a target="_blank"  href="http://twitter.com/share?text=Begin living the magis.   See how Saint Joseph's University in Philadelphia is helping its students to live greater. " target="_blank" class="twit twitterpopup">twitter</a>
-        <a  target="_blank" href="#" onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['SERVER_NAME'] .'/' ?>', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no'); return false;" class="fb">facebook</a>       </div>
-
-
-         
-</div>
-
-
-
+  
+    
     <div class="cover">
 
       <iframe src="" id="vidFrame" name="vidFrame" frameborder="0" style="height: 100%; width: 100%;" autoplay="1"></iframe>
