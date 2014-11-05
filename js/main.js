@@ -15,7 +15,11 @@ $(document).ready(function($){
     var hash =  window.location.hash;
     var arr = hash.split('#');
     if (arr[1]) {
+<<<<<<< HEAD
       var post_link = URL + '/magis/' + arr[1] + '/';
+=======
+      var post_link =  '<?php echo site_url(); ?>/magis/' + arr[1] + '/';
+>>>>>>> FETCH_HEAD
       renderPage(post_link);
 
     }else{

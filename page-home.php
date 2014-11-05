@@ -166,7 +166,10 @@ get_header(); ?>
         </ul>
 
   
+<<<<<<< HEAD
   
+=======
+>>>>>>> FETCH_HEAD
         <ul class="ext-links">
             <li><a target="_blank" href="http://www.sju.edu/visit">Visit</a></li>
             <li><a target="_blank" href="http://www.sju.edu/apply">Apply</a></li>
@@ -175,8 +178,13 @@ get_header(); ?>
       </nav>
       <div class="share">
         <h4>Share</h4>
+<<<<<<< HEAD
         <a target="_blank"  href="http://twitter.com/share?text=Begin living the magis.   See how Saint Joseph's University in Philadelphia is helping its students to live greater. " target="_blank" class="twit twitterpopup">twitter</a>
         <a  target="_blank" href="#" onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['SERVER_NAME'] .'/' ?>', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no'); return false;" class="fb">facebook</a>
+=======
+        <a  href="http://twitter.com/share?text=Look for" target="_blank" class="twit twitterpopup">twitter</a>
+        <a  href="#" onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://qa-inkriti-sju.inkriti.net/', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" class="fb">facebook</a>
+>>>>>>> FETCH_HEAD
       </div>
 </div>
 </section><!-- /wrap -->

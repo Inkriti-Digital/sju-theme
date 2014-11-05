@@ -177,10 +177,13 @@ section, body, .container-fluid, .row{
 			height: auto;
 		}
 
+<<<<<<< HEAD
 		footer p{
 			color: #fff !important;
 		}
 
+=======
+>>>>>>> FETCH_HEAD
 		
 
 		.sb-close{
@@ -230,12 +233,21 @@ section, body, .container-fluid, .row{
 
 		#video-blocks .col-md-3, #video-blocks .col-md-6, .text-block-redBg{
 			height: auto !important;
+<<<<<<< HEAD
 		}
 
 		#videoWrap .hero-img{
 			height: auto !important;
 		}
 
+=======
+		}
+
+		#videoWrap .hero-img{
+			height: auto !important;
+		}
+
+>>>>>>> FETCH_HEAD
 		.video-descp p{
 			padding-left: 30px;
 			padding-right: 15px;
@@ -260,6 +272,7 @@ section, body, .container-fluid, .row{
 	}
 
 	
+<<<<<<< HEAD
 	.play-btn {
 		line-height: 60px;
 		top: 360px !important;
@@ -376,6 +389,8 @@ and (orientation: portrait){
 	}
 
 	
+=======
+>>>>>>> FETCH_HEAD
 	.play-btn {
 		line-height: 60px;
 		top: 360px !important;
@@ -421,6 +436,7 @@ and (orientation: portrait){
 			height: 615px;
 		}
 
+<<<<<<< HEAD
 	}
 
 
@@ -516,6 +532,10 @@ section, body, .container-fluid{
 			height: 660px !important;
 		}
 	}
+=======
+
+
+>>>>>>> FETCH_HEAD
 
 }
 
