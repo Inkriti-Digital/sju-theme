@@ -68,9 +68,9 @@ header h1{ display:inline-block; float:left; text-indent:-9000px; }
 
 .grid-block { cursor:pointer; /*height:380px;*/ overflow: hidden; position: relative; text-align: center; background-color: #ccc; }
 
-.grid-img{ height: 100%; width:100%; display:block; transition: all 0.3s ease-in-out; overflow: hidden; }
+.grid-img{ max-width:640xp; max-height:640px; height: 100%; width:100%; display:block; transition: all 0.3s ease-in-out; overflow: hidden; }
 
-.grid-block img{ max-width: 100%; max-height:100%; width: 100%; }
+.grid-block img{ max-width: 100%; max-height:100% }
 
 .grid-hovered { height: 100%; position: absolute; top: 0; width: 100%; }
 

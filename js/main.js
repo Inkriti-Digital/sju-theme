@@ -1,3 +1,4 @@
+URL = 'http://' + location.host;
 var scrolled = false;
 $.slidebars();
 $(document).ready(function($){
@@ -14,7 +15,11 @@ $(document).ready(function($){
     var hash =  window.location.hash;
     var arr = hash.split('#');
     if (arr[1]) {
+<<<<<<< HEAD
+      var post_link = URL + '/magis/' + arr[1] + '/';
+=======
       var post_link =  '<?php echo site_url(); ?>/magis/' + arr[1] + '/';
+>>>>>>> FETCH_HEAD
       renderPage(post_link);
 
     }else{
@@ -67,6 +72,7 @@ $(document).ready(function($){
 
  function renderPage(post_link) {
   $('#home').hide();
+  console.log(post_link);
   $("#video").load(post_link);
   setTimeout(function(){
       $('#video').fadeIn('slow');

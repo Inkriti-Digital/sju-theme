@@ -21,7 +21,11 @@
                                     <li><a id="scroll-content" href="#video-blocks"><?php echo  get_field('caption'); ?> <span class="experience-icon">&nbsp;</span></a></li>
                                     <li><a target="_blank" href="http://sju.edu/visit">Visit <span class="visit-icon">&nbsp;</span></a></li>
                                     <li><a target="_blank" href="http://sju.edu/apply">Apply <span class="apply-icon">&nbsp;</span></a></li>
+<<<<<<< HEAD
+                               </ul>
+=======
                                 </ul>
+>>>>>>> FETCH_HEAD
                             </nav>
 
                              <div class="video-descp">
@@ -216,9 +220,15 @@
       </nav>
       <div class="share">
         <h4>Share</h4>
+<<<<<<< HEAD
+  <h4>Share</h4>
+        <a target="_blank"  href="http://twitter.com/share?text=Begin living the magis.   See how Saint Joseph's University in Philadelphia is helping its students to live greater. " target="_blank" class="twit twitterpopup">twitter</a>
+        <a  target="_blank" href="#" onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['SERVER_NAME'] .'/' ?>', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no'); return false;" class="fb">facebook</a>       </div>
+=======
   <a target="_blank"  href="http://twitter.com/share?text=Look for" target="_blank" class="twit twitterpopup">twitter</a>
         <a  target="_blank" href="#" onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://qa-inkriti-sju.inkriti.net/', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" class="fb">facebook</a>
          </div>
+>>>>>>> FETCH_HEAD
 
 
          

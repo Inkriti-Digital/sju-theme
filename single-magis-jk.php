@@ -16,6 +16,29 @@
                        <div class="hero-container">
                           <div class="video-nav">
                             <nav id="scroll-nav">
+
+                                                                    <?php 
+            $args = array( 'post_type' => 'apply', 'posts_per_page' => '1' );
+            $loop = new WP_Query( $args );
+        ?>
+        <?php 
+          while ( $loop->have_posts() ) : $loop->the_post(); 
+          $apply_link = get_field('link');
+          endwhile; 
+        ?>
+
+        <?php 
+            $args = array( 'post_type' => 'visit', 'posts_per_page' => '1' );
+            $loop = new WP_Query( $args );
+        ?>
+        <?php 
+          while ( $loop->have_posts() ) : $loop->the_post(); 
+          $visit_link = get_field('link');
+          endwhile; 
+        ?>
+
+        
+        
                                 <ul class="nav nav-tabs nav-justified" role="tablist">
                                     <li><a href="#" class="navigate-home home">Home <span class="home-icon">&nbsp;</span></a></li>
                                     <li><a id="scroll-content" href="#video-blocks"><?php echo  get_field('caption'); ?> <span class="experience-icon">&nbsp;</span></a></li>
