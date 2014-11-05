@@ -1,5 +1,6 @@
+URL = 'http://' + location.host;
 var scrolled = false;
-
+$.slidebars();
 $(document).ready(function($){
 
   hashchanged();
@@ -9,11 +10,12 @@ $(document).ready(function($){
  });
 
 
+
   function hashchanged(){
     var hash =  window.location.hash;
     var arr = hash.split('#');
     if (arr[1]) {
-      var post_link =  'http://qa-inkriti-sju.inkriti.net/magis/' + arr[1] + '/';
+      var post_link = URL + '/magis/' + arr[1] + '/';
       renderPage(post_link);
 
     }else{
@@ -35,7 +37,7 @@ $(document).ready(function($){
   $('#fade').removeClass('hide');
 
   /* ------ main navigation ------------ */
-  $.slidebars();
+  
  //site content load
  $('#video').hide();
 
@@ -48,8 +50,8 @@ $(document).ready(function($){
   return false;
 });
 
- $(document).on('click', '.grid-block, #navigation a', function(e){ 
-  var post = $(this).data('post');
+ $(document).on('click', '.grid-block, #navigation ul.sidenavright > li a', function(e){ 
+   var post = $(this).data('post');
   if(post) {
   var post_link = $(this).data('rel');
   window.location.hash = '#' + post ;
@@ -63,8 +65,10 @@ $(document).ready(function($){
 
 });
 
+
  function renderPage(post_link) {
   $('#home').hide();
+  console.log(post_link);
   $("#video").load(post_link);
   setTimeout(function(){
       $('#video').fadeIn('slow');
@@ -72,7 +76,7 @@ $(document).ready(function($){
       $('#videoWrap , .hero-img').css("height", viewportHeight);
       
 //Code remove as Justin updated new code for video 
-  }, 300);
+  }, 500);
 
 // code to make all boxes in equal heights in detail page
   setTimeout(function(){
@@ -90,6 +94,9 @@ $(document).ready(function($){
       })
       $('.equalizer').find('.column').height(highestBox);
     });
+
+
+  
   }, 2000);
 
   // $('#gallery .carousel-inner:first-child').addClass('active');
@@ -207,7 +214,7 @@ $('#slide').list_ticker({
 });
 
 
-$(document).on('click', '.sb-toggle-right', function() {
+$(document).on('click', '.sidebar-toggle-right', function() {
   
   jQuery('.inner-sidebar').show();
 });
@@ -224,7 +231,9 @@ var scrollNavP = $('body');
 $(window).scroll(function() {
 
  // var navLock = ;
- if(scrollNavP.scrollTop() > 700){
+
+ 
+ if(scrollNavP.scrollTop() > jQuery('.hero-container').height() -jQuery('#scroll-nav').height()){
   jQuery('#scroll-nav').addClass('lock-nav');
     // console.log("over 700");
   } else{
@@ -232,4 +241,53 @@ $(window).scroll(function() {
     scrolled = false;
   }
   // console.log(scrollNavP.scrollTop() );
+});
+
+
+$(window).on('resize', function() {
+    jQuery('.equalizer').each(function(){
+      var highestBox = 0;
+
+      jQuery('.equalizer').find('.column').each(function(){
+
+        if(jQuery(this).height() > highestBox){
+          highestBox = jQuery(this).height();
+          console.log(highestBox);
+        }
+      })
+      jQuery('.equalizer').find('.column').height(highestBox);
+    });
+});
+
+
+ jQuery('.twitterpopup').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = (jQuery(window).width()  - width)  / 2,
+        top    = (jQuery(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'twitter', opts);
+ 
+    return false;
+  });
+
+
+
+
+ //JK edits - mobile nav
+
+ $(document).on('click', '.sb-toggle-right', function() {
+  
+  jQuery('.inner-sidebar').show();
+});
+
+$(document).on('click', '.sb-close', function() {
+
+  jQuery('.inner-sidebar').hide();
 });

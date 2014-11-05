@@ -1,4 +1,5 @@
-<div class="container-fluid">
+
+ <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 inner-page-domino">
                     <a href="/" class="logo pull-left inner-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Saint Joseph University"></a>
@@ -17,10 +18,10 @@
                             <nav id="scroll-nav">
                                 <ul class="nav nav-tabs nav-justified" role="tablist">
                                     <li><a href="#" class="navigate-home home">Home <span class="home-icon">&nbsp;</span></a></li>
-                                    <li><a href="#video-blocks"><?php echo  get_field('caption'); ?> <span class="experience-icon">&nbsp;</span></a></li>
-                                    <li><a href="http://sju.edu/visit">Visit <span class="visit-icon">&nbsp;</span></a></li>
-                                    <li><a href="http://sju.edu/apply">Apply <span class="apply-icon">&nbsp;</span></a></li>
-                                </ul>
+                                    <li><a id="scroll-content" href="#video-blocks"><?php echo  get_field('caption'); ?> <span class="experience-icon">&nbsp;</span></a></li>
+                                    <li><a target="_blank" href="http://sju.edu/visit">Visit <span class="visit-icon">&nbsp;</span></a></li>
+                                    <li><a target="_blank" href="http://sju.edu/apply">Apply <span class="apply-icon">&nbsp;</span></a></li>
+                               </ul>
                             </nav>
 
                              <div class="video-descp">
@@ -129,7 +130,7 @@
              <div class="<?php echo $block; ?>">
                 <div class="row">
                    <div class="txtWithImg block">
-                        <div class="hover-block"></div><img src="<?php echo $small_image; ?>" alt="">
+                      <img src="<?php echo $small_image; ?>" alt="">
                       <?php echo $content; ?>
                     </div>
                    </div><!-- image plus text block -->
@@ -206,38 +207,21 @@
         </ul>
 
 
-        <?php 
-            $args = array( 'post_type' => 'apply', 'posts_per_page' => '1' );
-            $loop = new WP_Query( $args );
-        ?>
-        <?php 
-          while ( $loop->have_posts() ) : $loop->the_post(); 
-          $apply_link = get_field('link');
-          endwhile; 
-        ?>
-
-        <?php 
-            $args = array( 'post_type' => 'visit', 'posts_per_page' => '1' );
-            $loop = new WP_Query( $args );
-        ?>
-        <?php 
-          while ( $loop->have_posts() ) : $loop->the_post(); 
-          $visit_link = get_field('link');
-          endwhile; 
-        ?>
-
-        
+      
         <ul class="ext-links">
-            <li><a href="<?php echo $visit_link; ?>">Visit</a></li>
-            <li><a href="<?php echo $apply_link; ?>">Apply</a></li>
-            <li><a href="http://sju.edu/">SJU.EDU</a></li>
+            <li><a target="_blank" href="http://www.sju.edu/visit">Visit</a></li>
+            <li><a target="_blank" href="http://www.sju.edu/apply">Apply</a></li>
+            <li><a target="_blank" href="http://www.sju.edu/">SJU.EDU</a></li>
         </ul>
       </nav>
       <div class="share">
         <h4>Share</h4>
-        <a href="#" class="twit">twitter</a>
-        <a href="#" class="fb">facebook</a>
-      </div>
+  <h4>Share</h4>
+        <a target="_blank"  href="http://twitter.com/share?text=Begin living the magis.   See how Saint Joseph's University in Philadelphia is helping its students to live greater. " target="_blank" class="twit twitterpopup">twitter</a>
+        <a  target="_blank" href="#" onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['SERVER_NAME'] .'/' ?>', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no'); return false;" class="fb">facebook</a>       </div>
+
+
+         
 </div>
 
 
