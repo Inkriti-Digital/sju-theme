@@ -4,9 +4,15 @@
 
 <head>
   <title><?php wp_title( '|', true, 'right' ); ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="What's magis? It's a Jesuit principle that underlies everything we do at Saint Joseph's University. Discover what Magis means at SJU.">
+  <meta name="viewport" content="width=device-width,, initial-scale=.47, minimum-scale=0.25, maximum-scale=1.0, user-scalable=yes">
+  <meta name="description" content="See how Saint Joseph's University in Philadelphia is helping its students and graduates to live greater.">
   <meta name="keywords" content="" />
+
+<meta property="og:url" content="<?php echo site_url(); ?>"/>
+<meta property="og:title" content="Begin living the magis."/>
+<meta property="og:image" content="<?php echo site_url(); ?>/wp-content/themes/sju-theme/img/facebooklogo.png"/>
+<meta property="og:site_name" content="Saint Joseph's University"/>
+<meta property="og:description" content="See how Saint Joseph's University in Philadelphia is helping its students and graduates to live greater. "/>
 
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/fonts/font-css.css">

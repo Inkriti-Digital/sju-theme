@@ -1,3 +1,6 @@
+URL = 'http://' + location.host;
+var scrolled = false;
+$.slidebars();
 $(document).ready(function($){
 
   hashchanged();
@@ -7,11 +10,12 @@ $(document).ready(function($){
  });
 
 
+
   function hashchanged(){
     var hash =  window.location.hash;
     var arr = hash.split('#');
     if (arr[1]) {
-      var post_link =  'http://qa-inkriti-sju.inkriti.net/magis/' + arr[1] + '/';
+      var post_link = URL + '/magis/' + arr[1] + '/';
       renderPage(post_link);
 
     }else{
@@ -33,7 +37,7 @@ $(document).ready(function($){
   $('#fade').removeClass('hide');
 
   /* ------ main navigation ------------ */
-  $.slidebars();
+  
  //site content load
  $('#video').hide();
 
@@ -46,8 +50,8 @@ $(document).ready(function($){
   return false;
 });
 
- $(document).on('click', '.grid-block, #navigation a', function(e){ 
-  var post = $(this).data('post');
+ $(document).on('click', '.grid-block, #navigation ul.sidenavright > li a', function(e){ 
+   var post = $(this).data('post');
   if(post) {
   var post_link = $(this).data('rel');
   window.location.hash = '#' + post ;
@@ -61,8 +65,10 @@ $(document).ready(function($){
 
 });
 
+
  function renderPage(post_link) {
   $('#home').hide();
+  console.log(post_link);
   $("#video").load(post_link);
   setTimeout(function(){
       $('#video').fadeIn('slow');
@@ -70,7 +76,7 @@ $(document).ready(function($){
       $('#videoWrap , .hero-img').css("height", viewportHeight);
       
 //Code remove as Justin updated new code for video 
-  }, 300);
+  }, 500);
 
 // code to make all boxes in equal heights in detail page
   setTimeout(function(){
@@ -88,6 +94,9 @@ $(document).ready(function($){
       })
       $('.equalizer').find('.column').height(highestBox);
     });
+
+
+  
   }, 2000);
 
   // $('#gallery .carousel-inner:first-child').addClass('active');
@@ -108,7 +117,9 @@ $(document).ready(function($){
 
 
     $(document).on('click', '#close-slider', function(){ 
-      $('#gallery').carousel('pause').hide();$('#video-blocks').fadeIn('slow');})
+      $('#gallery').carousel('pause').hide();$('#video-blocks').fadeIn('slow');
+       $('#scroll-nav').show();
+    })
 
 
     $(document).on('click', '.play-btn', function(){ 
@@ -133,8 +144,8 @@ $(document).ready(function($){
     
     $(document).on('click', '#close-video', function(){ 
       oldSrc = $('#video-frame').data('src');
-      $('#video-frame').attr('src', '');
-      $('#video-frame').attr('src', oldSrc);
+      $('#vidFrame').attr('src', '');
+      // $('#video-frame').attr('src', oldSrc);
       $('#close-video').addClass('hide');
       $('.hero-container').fadeIn('slow'); return false;
       
@@ -149,16 +160,27 @@ $(document).ready(function($){
     });
 
     //real world experiences
-    $(document).on('click', 'a[href^="#"]', function() { 
-      var target = $( $(this).attr('href'));
+    // $(document).on('click', 'a[href^="#"]', function() { 
+    //   var target = $( $(this).attr('href'));
 
-      if( target.length ) {
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
+    //   if( target.length ) {
+    //     event.preventDefault();
+    //     $('html, body').animate({
+    //       scrollTop: target.offset().top
+    //     }, 1000);
+    //   }
+    // });
+
+    $(document).off('click', '#scroll-content').on('click', '#scroll-content', function(e) { 
+      if(scrolled == false) {
+      $('html, body').animate({
+          scrollTop: $("#video-blocks").offset().top
+      }, 1000);
+      scrolled = true;
       }
+      e.preventDefault();
     });
+
 
     // video description | show full content on hover
     $(document).on('mouseover', '.video-descp', function() { 
@@ -175,6 +197,7 @@ $(document).ready(function($){
       console.log(slide);
      $("#gallery").carousel(slide);
      $('#gallery').fadeIn('slow');$('#video-blocks').fadeOut('fast');
+     $('#scroll-nav').hide();
      return false;
 
    });
@@ -191,18 +214,80 @@ $('#slide').list_ticker({
 });
 
 
+$(document).on('click', '.sidebar-toggle-right', function() {
+  
+  jQuery('.inner-sidebar').show();
+});
+
+$(document).on('click', '.sb-close', function() {
+
+  jQuery('.inner-sidebar').hide();
+});
 
 //Code for Fixed Nav 
 var scrollNavP = $('body');
 
+
 $(window).scroll(function() {
 
  // var navLock = ;
- if(scrollNavP.scrollTop() > 700){
+
+ 
+ if(scrollNavP.scrollTop() > jQuery('.hero-container').height() -jQuery('#scroll-nav').height()){
   jQuery('#scroll-nav').addClass('lock-nav');
     // console.log("over 700");
   } else{
     jQuery('#scroll-nav').removeClass('lock-nav');
+    scrolled = false;
   }
   // console.log(scrollNavP.scrollTop() );
+});
+
+
+$(window).on('resize', function() {
+    jQuery('.equalizer').each(function(){
+      var highestBox = 0;
+
+      jQuery('.equalizer').find('.column').each(function(){
+
+        if(jQuery(this).height() > highestBox){
+          highestBox = jQuery(this).height();
+          console.log(highestBox);
+        }
+      })
+      jQuery('.equalizer').find('.column').height(highestBox);
+    });
+});
+
+
+ jQuery('.twitterpopup').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = (jQuery(window).width()  - width)  / 2,
+        top    = (jQuery(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'twitter', opts);
+ 
+    return false;
+  });
+
+
+
+
+ //JK edits - mobile nav
+
+ $(document).on('click', '.sb-toggle-right', function() {
+  
+  jQuery('.inner-sidebar').show();
+});
+
+$(document).on('click', '.sb-close', function() {
+
+  jQuery('.inner-sidebar').hide();
 });
